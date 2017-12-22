@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>名前を変更してください</p>
+	<div>元の名前：<%= name %></div>
+	<form method="POST" action="/doUpdate">
+		<input type="text" name="name"/>
+		<input type="hidden" name="eId" value="<%= eId %>"/>
+        <input type="submit" value="編集"/>
+    </form>
+
+	
+    <p><a href="/list">訪問者一覧へ</a></p>
+  </body>
+</html>

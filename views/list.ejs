@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    
+    <% if (data != null) { %>
+        <table border="1">
+        <% for(var i=0; i < data.length; i++){ %>
+            <tr>
+            <td width="200px"><%= data[i].demoname__c %></td>
+            <td width="50px">
+            	<form method="POST" action="/update">
+            		<input type="hidden" name="name" value="<%= data[i].demoname__c %>"/>
+            		<input type="hidden" name="eId" value="<%= data[i].ex_id__c %>" />
+            		<input type="submit" value="編集"/>
+            	</form>
+            </td>
+            <td width="50px">
+            	<form method="POST" action="/doDelete">
+            		<input type="hidden" name="name" value="<%= data[i].demoname__c %>"/>
+            		<input type="hidden" name="eId" value="<%= data[i].ex_id__c %>" />
+            		<input type="submit" value="削除"/>
+            	</form>
+            </td>
+            </tr>
+        <% } %>
+        </table>
+    <% } %>
+    <p><a href="/">入力画面へ</a></p>
+  </body>
+</html>

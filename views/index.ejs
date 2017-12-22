@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>ようこそ！　名前を入力して下さい！</p>
+    <form method="POST" action="/confirmation">
+    	<input type="text" name="name"/>
+    	<input type="submit" value="入力" />
+    </form>
+    <p><a href="/list">訪問者一覧へ</a></p>
+  </body>
+</html>
